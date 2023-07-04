@@ -127,28 +127,30 @@ console.log(bikesArray);
 
 //для машин
 let carInfo = document.getElementById('cars');
-let liCollection1 = document.createElement('li'); 
+ 
 
 //отображаем машины на странице
 
 function makeCars (car) {
-  carInfo.appendChild(liCollection1);
-
-  let carTitle = document.createElement('h2');
-  carTitle.innerText = car.getInfo().brand;
-  carInfo.appendChild(carTitle);
+  let liCollection1 = document.createElement('li');
 
   let carImage = document.createElement('img');
   carImage.setAttribute('src', car.getImg());
-  carInfo.appendChild(carImage);
+  liCollection1.appendChild(carImage);
+
+  let carTitle = document.createElement('h2');
+  carTitle.innerText = `Марка: ${car.getInfo().brand}`;
+  liCollection1.appendChild(carTitle);
 
   let carDoors = document.createElement('p');
   carDoors.innerText = `Количество дверей: ${car.getDoorsCount()}`;
-  carInfo.appendChild(carDoors);
+  liCollection1.appendChild(carDoors);
 
   let carPrice = document.createElement('p');
   carPrice.innerText = `Стоимость: ${car.getPrice()} руб.`;
-  carInfo.appendChild(carPrice);
+  liCollection1.appendChild(carPrice);
+
+  carInfo.appendChild(liCollection1);
 }
 
 //для мотоциклов
@@ -159,24 +161,25 @@ let liCollection2 = document.createElement('li');
 //отображаем мотоциклы на странице
 
 function makeBikes (bike) {
+let liCollection2 = document.createElement('li');
 
-  bikeInfo.appendChild(liCollection2);
+let bikeImage = document.createElement('img');
+  bikeImage.setAttribute('src', bike.getImg());
+  liCollection2.appendChild(bikeImage);
 
   let bikeTitle = document.createElement('h2');
   bikeTitle.innerText = bike.getInfo().brand;
-  bikeInfo.appendChild(bikeTitle);
-
-  let bikeImage = document.createElement('img');
-  bikeImage.setAttribute('src', bike.getImg());
-  bikeInfo.appendChild(bikeImage);
+  liCollection2.appendChild(bikeTitle);
 
   let bikeSpeed = document.createElement('p');
   bikeSpeed.innerText = `Максимальная скорость: ${bike.getMaxSpeed()} км/ч`;
-  bikeInfo.appendChild(bikeSpeed);
+  liCollection2.appendChild(bikeSpeed);
 
   let bikePrice = document.createElement('p');
   bikePrice.innerText = `Стоимость: ${bike.getPrice()} руб.`;
-  bikeInfo.appendChild(bikePrice);
+  liCollection2.appendChild(bikePrice);
+
+  bikeInfo.appendChild(liCollection2);
 }
 
 carsArray.forEach((car) => makeCars (car));

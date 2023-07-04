@@ -1,0 +1,30 @@
+header {
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+}
+
+#cars, #bikes {
+    color: darkslategrey;
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    width: 400px;
+    border-radius: 20px;
+}
+
+li {
+list-style-type: none;
+}
